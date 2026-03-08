@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500&display=swap");
+@media (max-width: 480px) {
+    body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #456882;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+#main_container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1.5fr 10fr 1fr;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "container container container"
+    "footer footer footer";
+}
+#navbar {
+  background-color: #1b3c53;
+  grid-area: navbar;
+  border-bottom: solid 2px #234c6a;
+  border-radius: 30px 30px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#navbar h2{
+    color: #D2C1B6;
+    font-size: 700;
+    font-weight: 900;
+
+}
+.button_navbar button {
+  background-color: #234c6a;
+  border: solid 1px #d2c1b6;
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  width: 8rem;
+  height: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+}
+.card button, .card-individual button, .reservas button {
+  background-color: #234c6a;
+  border: solid 1px #d2c1b6;
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  width: 8rem;
+  height: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+}
+.card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 28px 28px 0 0;
+  display: block;
+}
+.button_navbar button:hover,
+.card button:hover, .card-individual button:hover , .reservas button:hover {
+  background-color: #d2c1b6;
+  color: #1b3c53;
+  border: solid 1px #1b3c53;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+#container {
+  grid-area: container;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container h1{
+    color: #D2C1B6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 700;
+    font-weight: 500;
+}
+#footer {
+  background-color: #d2c1b6;
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 28px;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.font i{
+    font-size: 2rem;
+    transition: 0.5s;
+    margin-left: 1rem;
+}
+.font i:hover{
+    transform: scale(1.3);
+}
+
+.menu-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.menu-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #D2C1B6;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.entradas,
+.fondos,
+.postres,
+.especiales,
+.sopas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  border: solid 2px #d2c1b6;
+  padding-bottom: 1rem;
+  width: 20rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card h3,
+.card h2,
+.card h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #1b3c53;
+  margin: 10px 0;
+}
+
+.card p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+  margin: 5px 0;
+}
+
+.card span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #1b3c53;
+  font-size: 1.2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+.contacto {
+    width: 90%;
+}
+#contacto-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+#contacto-card img{
+    width: 90%;
+    border-radius: 28px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 6px 10px;
+}
+.informacion-card p{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+}
+.contacto h1{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+}
+
+#pagina-principal{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+#pagina-principal img{
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: black 0 8px 16px;
+   
+}
+
+
+.reservas{
+        border: solid 2px #d2c1b6;
+  width: 90%;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.reservas label{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+margin-top: 1rem;
+}
+.reservas input{
+    background-color: #D2C1B6;
+    border-radius: 28px;
+    height: 1rem;
+padding-left: 1rem;
+font-size: medium;
+font-weight: 400;
+}
+
+.reservas button {
+    margin-top: 1rem;
+}
+
+}
+
+
+@media(min-width: 1200px){
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #456882;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+#main_container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1.5fr 10fr 1fr;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "container container container"
+    "footer footer footer";
+}
+#navbar {
+  background-color: #1b3c53;
+  grid-area: navbar;
+  border-bottom: solid 2px #234c6a;
+  border-radius: 30px 30px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#navbar h2{
+    color: #D2C1B6;
+    font-size: 700;
+    font-weight: 900;
+
+}
+.button_navbar button {
+  background-color: #234c6a;
+  border: solid 1px #d2c1b6;
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  width: 8rem;
+  height: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+}
+.card button, .card-individual button, .reservas button {
+  background-color: #234c6a;
+  border: solid 1px #d2c1b6;
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  width: 8rem;
+  height: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+}
+.card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 28px 28px 0 0;
+  display: block;
+}
+.button_navbar button:hover,
+.card button:hover, .card-individual button:hover , .reservas button:hover {
+  background-color: #d2c1b6;
+  color: #1b3c53;
+  border: solid 1px #1b3c53;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+#container {
+  grid-area: container;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container h1{
+    color: #D2C1B6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 700;
+    font-weight: 500;
+}
+#footer {
+  background-color: #d2c1b6;
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 28px;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.font i{
+    font-size: 2rem;
+    transition: 0.5s;
+    margin-left: 1rem;
+}
+.font i:hover{
+    transform: scale(1.3);
+}
+
+.menu-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.menu-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #D2C1B6;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.entradas,
+.fondos,
+.postres,
+.especiales,
+.sopas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  border: solid 2px #d2c1b6;
+  padding-bottom: 1rem;
+  width: 20rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card h3,
+.card h2,
+.card h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #1b3c53;
+  margin: 10px 0;
+}
+
+.card p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #d2c1b6;
+  margin: 5px 0;
+}
+
+.card span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #1b3c53;
+  font-size: 1.2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+.contacto {
+    width: 90%;
+}
+#contacto-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     border: solid 2px #d2c1b6;
+      border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+    padding: 2rem;
+}
+#contacto-card:hover{
+     transform: translateY(-5px);
+}
+#contacto-card img{
+    width: 50rem;
+    border-radius: 28px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 6px 10px;
+}
+.informacion-card p{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+}
+.contacto h1{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+}
+
+#pagina-principal{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+#pagina-principal img{
+    width: 70%;
+    border-radius: 28px;
+    box-shadow: black 0 8px 16px;
+    transition: ease-in 0.5s;
+   
+}
+#pagina-principal img:hover{
+    transform: scale(1.05);
+}
+
+
+.reservas{
+        border: solid 2px #d2c1b6;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.reservas label{
+    color:#D2C1B6;
+    font-family: "Poppins", sans-serif;
+margin-top: 1rem;
+}
+.reservas input{
+    background-color: #D2C1B6;
+    border-radius: 28px;
+    height: 1rem;
+padding-left: 1rem;
+font-size: medium;
+font-weight: 400;
+}
+
+.reservas button {
+    margin-top: 1rem;
+}
+}
