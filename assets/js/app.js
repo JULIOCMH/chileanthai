@@ -13,7 +13,6 @@ function navbar() {
     <div class="button_navbar" id="nav-links">
         <button id="inicio">Inicio</button>
         <button id="menu-btn">Menu</button>
-        <button>Salon</button>
         <button id="reserva-btn">Reservacion</button>
         <button id="contacto-btn">Contacto</button>
 		</div>`;
@@ -202,6 +201,19 @@ function reserva() {
         <input type="email" id="correo" name="correo" autocomplete="email" required>
         <label for="telefono">Telefono</label>
         <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+        <label for="personas">Cantidad de personas:</label>
+<select id="personas" name="personas" required>
+    <option value="">Selecciona</option>
+    <option value="1">1 persona</option>
+    <option value="2">2 personas</option>
+    <option value="3">3 personas</option>
+    <option value="4">4 personas</option>
+    <option value="5">5 personas</option>
+    <option value="6">6 personas</option>
+    <option value="7">7 personas</option>
+    <option value="8">8 personas</option>
+    <option value="9+">Más de 8 personas</option>
+</select>
         <label for="reserva">Selecciona una fecha:</label>
         <input type="text" id="reserva" name="reserva" placeholder="Selecciona fecha y hora" required>
         <button type="submit">Enviar</button>
