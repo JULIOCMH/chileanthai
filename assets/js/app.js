@@ -7,7 +7,10 @@ const nav = document.getElementById("navbar");
 function navbar() {
   nav.innerHTML = `
 <h2>Chilean Thai</h2>
-    <div class="button_navbar">
+    <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="button_navbar" id="nav-links">
         <button id="inicio">Inicio</button>
         <button id="menu-btn">Menu</button>
         <button>Salon</button>
@@ -17,6 +20,23 @@ function navbar() {
 }
 
 navbar();
+
+const navToggle = document.getElementById("nav-toggle");
+const navLinks = document.getElementById("nav-links");
+
+function cerrarMenuMovil() {
+  if (window.innerWidth <= 1199 && navLinks && navToggle) {
+    navLinks.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+}
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const menuAbierto = navLinks.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(menuAbierto));
+  });
+}
 //INICIO
 
 function home() {
@@ -28,7 +48,10 @@ function home() {
 }
 home();
 const btnInicio = document.getElementById("inicio");
-btnInicio.addEventListener("click", home);
+btnInicio.addEventListener("click", () => {
+  home();
+  cerrarMenuMovil();
+});
 
 //CONTACTO
 
@@ -50,7 +73,10 @@ function contacto() {
 }
 
 const btnContacto = document.getElementById("contacto-btn");
-btnContacto.addEventListener("click", contacto);
+btnContacto.addEventListener("click", () => {
+  contacto();
+  cerrarMenuMovil();
+});
 
 //FOOTER
 
@@ -60,6 +86,7 @@ function footer() {
   foot.innerHTML = `
 	<h3>ChileanThai</h3>
     <p>Contacto : xxxxxxx@gmail.com</p>
+    <p>Telefono Contacto : +56912312312</p>
     <div class="font">
         <i class="fa-brands fa-instagram"></i>
         <i class="fa-brands fa-square-facebook"></i>
@@ -156,7 +183,10 @@ function cargarMenu() {
 // Seleccionar botón DESPUÉS de crear navbar
 const btnMenu = document.getElementById("menu-btn");
 
-btnMenu.addEventListener("click", cargarMenu);
+btnMenu.addEventListener("click", () => {
+  cargarMenu();
+  cerrarMenuMovil();
+});
 
 //RESERVAS
 
@@ -173,28 +203,33 @@ function reserva() {
         <label for="telefono">Telefono</label>
         <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
         <label for="reserva">Selecciona una fecha:</label>
-        <input type="datetime-local" id="reserva" name="reserva" required>
+        <input type="text" id="reserva" name="reserva" placeholder="Selecciona fecha y hora" required>
         <button type="submit">Enviar</button>
     </form>.`;
+
+  const inputReserva = document.getElementById("reserva");
+
+  if (!inputReserva) return;
+
+  if (typeof flatpickr === "function") {
+    flatpickr(inputReserva, {
+      enableTime: true,
+      time_24hr: true,
+      dateFormat: "Y-m-d H:i",
+      minDate: "today",
+      minTime: "11:00",
+      maxTime: "22:00",
+      minuteIncrement: 15,
+      disable: [
+        (date) => date.getDay() === 0 || date.getDay() === 1
+      ],
+    });
+  }
 }
 
 const btn_reserva = document.getElementById("reserva-btn");
 
-btn_reserva.addEventListener("click", reserva);
-
-const inputReserva = document.getElementById("reserva");
-
-if (inputReserva) {
-  const ahora = new Date();
-
-  const year = ahora.getFullYear();
-  const month = String(ahora.getMonth() + 1).padStart(2, "0");
-  const day = String(ahora.getDate()).padStart(2, "0");
-  const hours = String(ahora.getHours()).padStart(2, "0");
-  const minutes = String(ahora.getMinutes()).padStart(2, "0");
-
-  // formato requerido por datetime-local: YYYY-MM-DDTHH:MM
-  const minDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
-
-  inputReserva.min = minDateTime;
-}
+btn_reserva.addEventListener("click", () => {
+  reserva();
+  cerrarMenuMovil();
+});
